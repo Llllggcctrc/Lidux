@@ -1,0 +1,7 @@
+CREATE DATABASE Lidux;
+
+CREATE TABLE jogos{
+    id SERIAL PRIMARY KEY
+    nome VARCHAR(10) NOT NULL,
+    usuario_nome VARCHAR(50) NOT NULL
+};

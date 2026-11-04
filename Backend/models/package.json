@@ -1,0 +1,10 @@
+{
+    "nome": "Matemática Divertida",
+    "descricao": "Aprenda operações matemáticas brincando.",
+    "categoria": "Matemática",
+    "idadeMinima": 8,
+    "idadeMaxima": 10,
+    "dificuldade": "Fácil",
+    "imagem": "https://exemplo.com/imagem.jpg",
+    "link": "https://exemplo.com/jogo"
+}

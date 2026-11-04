@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lidux</title>
+  <link rel="stylesheet" href="lidux.css">
+</head>
+<body>
+
+  <header>
+    <h1>Lidux</h1>
+    <p>Sites brasileiros de Desenvolvimento de Sistemas e Eletroeletrônica que usam gamificação</p>
+  </header>
+
+  <nav>
+    <a href="#recomendacoes">Recomendações</a>
+    <a href="#cadastro">Indicar um site</a>
+  </nav>
+
+  <main>
+
+    <section id="recomendacoes">
+      <h2>Recomendações</h2>
+
+      <div class="filtros">
+        <input type="text" placeholder="Buscar site">
+        <select>
+          <option value="">Todas as categorias</option>
+          <option>Desenvolvimento de Sistemas</option>
+          <option>Eletroeletrônica</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <h3>Curvo Studio – Motor de indução trifásico</h3>
+        <p><span class="categoria">Eletroeletrônica</span></p>
+        <p>Simulador 3D interativo: você ajusta tensão, frequência e carga e vê velocidade, escorregamento e corrente do motor.</p>
+        <p><strong>Como engaja:</strong> Simulador interativo</p>
+        <p><a href="https://curvostudio.com/pt-br/simulator/motor-inducao-trifasico" target="_blank">Visitar site</a></p>
+        <button class="botao" type="button">Editar</button>
+        <button class="botao apagar" type="button">Apagar</button>
+      </div>
+
+      <div class="card">
+        <h3>Cubit – Simuladores</h3>
+        <p><span class="categoria">Eletroeletrônica</span></p>
+        <p>Simuladores gratuitos no navegador: PWM, código de cores de resistores, Lei de Ohm, divisor de tensão e resistor para LED.</p>
+        <p><strong>Como engaja:</strong> Simulador interativo</p>
+        <p><a href="https://www.cubit.com.br/simuladores/" target="_blank">Visitar site</a></p>
+        <button class="botao" type="button">Editar</button>
+        <button class="botao apagar" type="button">Apagar</button>
+      </div>
+
+      <div class="card">
+        <h3>Portugol Studio</h3>
+        <p><span class="categoria">Desenvolvimento de Sistemas</span></p>
+        <p>Ambiente para iniciantes aprenderem a programar em português, com exemplos, depurador e criação de jogos.</p>
+        <p><strong>Como engaja:</strong> Aprender fazendo e criar jogos</p>
+        <p><a href="https://lite.acad.univali.br/portugol-studio/" target="_blank">Visitar site</a></p>
+        <button class="botao" type="button">Editar</button>
+        <button class="botao apagar" type="button">Apagar</button>
+      </div>
+
+    </section>
+
+    <section id="cadastro">
+      <h2>Indicar um site</h2>
+      <form>
+        <label>Nome do site
+          <input type="text" required>
+        </label>
+
+        <label>Link
+          <input type="url" placeholder="https://" required>
+        </label>
+
+        <label>Categoria
+          <select required>
+            <option value="">Escolha</option>
+            <option>Desenvolvimento de Sistemas</option>
+            <option>Eletroeletrônica</option>
+          </select>
+        </label>
+
+        <label>Como o site engaja
+          <select required>
+            <option value="">Escolha</option>
+            <option>Simulador interativo</option>
+            <option>Pontos</option>
+            <option>Ranking</option>
+            <option>Trilhas</option>
+            <option>Outro</option>
+          </select>
+        </label>
+
+        <label>Descrição
+          <textarea rows="3" required></textarea>
+        </label>
+
+        <button class="botao" type="submit">Salvar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Lidux · Projeto Integrador · Técnico em Desenvolvimento de Sistemas</p>
+  </footer>
+
+</body>
+</html>
