@@ -1,0 +1,27 @@
+{
+  "name": "lidux",
+  "version": "1.0.0",
+  "description": "```text\r Lidux/\r │\r ├── backend/\r │   ├── server.js\r │   ├── config/\r │   │   └── database.js\r │   ├── models/\r │   │   └── Jogo.js\r │   └── routes/\r │       └── jogoRoutes.js\r │\r ├── frontend/\r │   ├── index.html\r │   ├── style.css\r │   └── script.js\r │\r └── README.md\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Llllggcctrc/Lidux.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Llllggcctrc/Lidux/issues"
+  },
+  "homepage": "https://github.com/Llllggcctrc/Lidux#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "mongoose": "^9.12.1"
+  }
+}

@@ -4,9 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lidux</title>
-  <link rel="stylesheet" href="lidux.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Botões escondidos que controlam as abas -->
+  <input type="radio" name="aba" id="aba1" class="aba-radio" checked>
+  <input type="radio" name="aba" id="aba2" class="aba-radio">
+  <input type="radio" name="aba" id="aba3" class="aba-radio">
+  <input type="radio" name="aba" id="aba4" class="aba-radio">
 
   <header>
     <h1>Lidux</h1>
@@ -14,13 +20,16 @@
   </header>
 
   <nav>
-    <a href="#recomendacoes">Recomendações</a>
-    <a href="#cadastro">Indicar um site</a>
+    <label for="aba1">Recomendações</label>
+    <label for="aba2">Cadastrar</label>
+    <label for="aba3">Sugestões</label>
+    <label for="aba4">Suporte</label>
   </nav>
 
   <main>
 
-    <section id="recomendacoes">
+    <!-- ABA 1: RECOMENDAÇÕES -->
+    <section id="recomendacoes" class="painel">
       <h2>Recomendações</h2>
 
       <div class="filtros">
@@ -31,6 +40,11 @@
           <option>Eletroeletrônica</option>
         </select>
       </div>
+
+      <h3>Cadastrados no sistema</h3>
+      <div id="listaJogos"></div>
+
+      <h3>Indicados pela equipe</h3>
 
       <div class="card">
         <h3>Curvo Studio – Motor de indução trifásico</h3>
@@ -53,19 +67,102 @@
       </div>
 
       <div class="card">
-        <h3>Portugol Studio</h3>
+        <h3>CodeTrail</h3>
         <p><span class="categoria">Desenvolvimento de Sistemas</span></p>
-        <p>Ambiente para iniciantes aprenderem a programar em português, com exemplos, depurador e criação de jogos.</p>
-        <p><strong>Como engaja:</strong> Aprender fazendo e criar jogos</p>
-        <p><a href="https://lite.acad.univali.br/portugol-studio/" target="_blank">Visitar site</a></p>
+        <p>Plataforma gratuita e em português para aprender HTML, CSS e JavaScript do zero, com trilhas curtas e desafios de código.</p>
+        <p><strong>Como engaja:</strong> XP, níveis, vidas, boss fights, ranking e missão diária</p>
+        <p><a href="https://codetrail.net/" target="_blank">Visitar site</a></p>
         <button class="botao" type="button">Editar</button>
         <button class="botao apagar" type="button">Apagar</button>
       </div>
 
+      <div class="card">
+        <h3>Ensino Social – Programar</h3>
+        <p><span class="categoria">Desenvolvimento de Sistemas</span></p>
+        <p>Jogos para aprender a programar, do site Ensino Social.</p>
+        <p><strong>Como engaja:</strong> Jogos educativos</p>
+        <p><a href="https://games.ensinosocial.com.br/programar/" target="_blank">Visitar site</a></p>
+        <button class="botao" type="button">Editar</button>
+        <button class="botao apagar" type="button">Apagar</button>
+      </div>
+
+      <div class="card">
+        <h3>Minike Games – Code Quest</h3>
+        <p><span class="categoria">Desenvolvimento de Sistemas</span></p>
+        <p>Missões curtas de programação dentro de uma vitrine de jogos: HTML/CSS, JavaScript, Python, SQL, Git, PHP/API e lógica.</p>
+        <p><strong>Como engaja:</strong> Missões e ranking</p>
+        <p><a href="https://minike.com.br/games/" target="_blank">Visitar site</a></p>
+        <button class="botao" type="button">Editar</button>
+        <button class="botao apagar" type="button">Apagar</button>
+      </div>
     </section>
 
-    <section id="cadastro">
-      <h2>Indicar um site</h2>
+    <!-- ABA 2: CADASTRAR (formulário do colega, com os mesmos ids) -->
+    <section id="cadastro" class="painel">
+      <h2>Cadastrar</h2>
+      <p>Cadastre um novo jogo educativo!</p>
+
+      <form id="formJogo">
+
+        <input type="hidden" id="jogoId">
+
+        <label>Nome do jogo:
+          <input type="text" id="nome" required>
+        </label>
+
+        <label>Descrição:
+          <textarea id="descricao" required></textarea>
+        </label>
+
+        <label>Categoria:
+          <select id="categoria" required>
+            <option value="">Selecione</option>
+            <option value="Matemática">Matemática</option>
+            <option value="Português">Português</option>
+            <option value="Ciências">Ciências</option>
+            <option value="Geografia">Geografia</option>
+            <option value="Inglês">Inglês</option>
+            <option value="Raciocínio lógico">Raciocínio lógico</option>
+          </select>
+        </label>
+
+        <label>Idade mínima:
+          <input type="number" id="idadeMinima" min="6" max="12" required>
+        </label>
+
+        <label>Idade máxima:
+          <input type="number" id="idadeMaxima" min="6" max="12" required>
+        </label>
+
+        <label>Dificuldade:
+          <select id="dificuldade" required>
+            <option value="">Selecione</option>
+            <option value="Fácil">Fácil</option>
+            <option value="Médio">Médio</option>
+            <option value="Difícil">Difícil</option>
+          </select>
+        </label>
+
+        <label>Link da imagem:
+          <input type="url" id="imagem" placeholder="https://...">
+        </label>
+
+        <label>Link do jogo:
+          <input type="url" id="link" placeholder="https://..." required>
+        </label>
+
+        <button class="botao" type="submit" id="btnSalvar">Cadastrar jogo</button>
+        <button class="botao apagar" type="button" id="btnCancelar" hidden>Cancelar edição</button>
+      </form>
+
+      <div id="mensagem"></div>
+    </section>
+
+    <!-- ABA 3: SUGESTÕES -->
+    <section id="sugestoes" class="painel">
+      <h2>Sugestões</h2>
+      <p>Conhece um site brasileiro de Desenvolvimento de Sistemas ou Eletroeletrônica que usa gamificação? Sugira aqui.</p>
+
       <form>
         <label>Nome do site
           <input type="text" required>
@@ -87,6 +184,8 @@
           <select required>
             <option value="">Escolha</option>
             <option>Simulador interativo</option>
+            <option>XP e níveis</option>
+            <option>Missões</option>
             <option>Pontos</option>
             <option>Ranking</option>
             <option>Trilhas</option>
@@ -94,11 +193,66 @@
           </select>
         </label>
 
-        <label>Descrição
+        <label>Por que você recomenda?
           <textarea rows="3" required></textarea>
         </label>
 
-        <button class="botao" type="submit">Salvar</button>
+        <button class="botao" type="submit">Enviar sugestão</button>
+      </form>
+    </section>
+
+    <!-- ABA 4: SUPORTE -->
+    <section id="suporte" class="painel">
+      <h2>Suporte</h2>
+
+      <h3>Perguntas frequentes</h3>
+
+      <details>
+        <summary>O que é o Lidux?</summary>
+        <p>O Lidux reúne sites brasileiros de Desenvolvimento de Sistemas e Eletroeletrônica que ensinam de um jeito interativo ou gamificado.</p>
+      </details>
+
+      <details>
+        <summary>Como cadastrar um site?</summary>
+        <p>Abra a aba Cadastrar, preencha os campos e clique no botão de cadastro.</p>
+      </details>
+
+      <details>
+        <summary>Como sugerir um site?</summary>
+        <p>Abra a aba Sugestões, informe o nome e o link do site e explique por que você o recomenda.</p>
+      </details>
+
+      <details>
+        <summary>Um link não abre. O que fazer?</summary>
+        <p>Envie uma mensagem pelo formulário abaixo, informando o nome do site, que a equipe verifica.</p>
+      </details>
+
+      <h3>Fale com a gente</h3>
+
+      <form>
+        <label>Seu nome
+          <input type="text" required>
+        </label>
+
+        <label>Seu e-mail
+          <input type="email" required>
+        </label>
+
+        <label>Assunto
+          <select required>
+            <option value="">Escolha</option>
+            <option>Dúvida</option>
+            <option>Link com problema</option>
+            <option>Erro no site</option>
+            <option>Outro</option>
+          </select>
+        </label>
+
+        <label>Mensagem
+          <textarea rows="4" required></textarea>
+        </label>
+
+        <button class="botao" type="submit">Enviar mensagem</button>
       </form>
     </section>
 
@@ -108,5 +262,6 @@
     <p>Lidux · Projeto Integrador · Técnico em Desenvolvimento de Sistemas</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
